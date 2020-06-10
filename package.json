@@ -1,0 +1,23 @@
+{
+	"name": "arpitdalal.dev",
+	"version": "1.0.0",
+	"description": "My portfolio",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/arpitdalalm/arpitdalal.dev.git"
+	},
+	"author": "Arpit Dalal",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/arpitdalalm/arpitdalal.dev/issues"
+	},
+	"homepage": "https://github.com/arpitdalalm/arpitdalal.dev#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
