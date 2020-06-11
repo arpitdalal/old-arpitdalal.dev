@@ -61,3 +61,19 @@ h1 {
 .img {
 	margin-top: 10%;
 }
+
+/* 404 page styles */
+.not-found {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	height: 100vh;
+}
+
+.not-found a {
+	text-decoration: none;
+	font-size: 1.1rem;
+	color: #f8b5ba;
+}
