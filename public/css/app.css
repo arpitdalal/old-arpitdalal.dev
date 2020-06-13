@@ -5,9 +5,13 @@ body {
 	background: #ff6e7f; /* fallback for old browsers */
 	background: -webkit-linear-gradient(to left, #35115e, #f8b5ba); /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to left, #35115e, #f8b5ba); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	overflow-x: hidden;
+	overflow-x: hidden !important;
 	color: white;
 	font-size: 1rem;
+}
+
+.row {
+	margin: 0;
 }
 
 .card {
@@ -24,9 +28,44 @@ body {
 	border-top-right-radius: calc(1rem - 1px);
 }
 
+.card-title {
+	margin-bottom: 0;
+}
+
+.card-sub-title {
+	margin-bottom: .75rem;
+}
+
 h1 {
-	color: #35115e;
 	font-family: ubuntu, Roboto;
+}
+
+h1,
+h5 {
+	color: #35115e;
+}
+
+.resume {
+	margin-bottom: 1.2rem;
+}
+
+.resume .btn {
+	padding: .5rem .4rem;
+	border-radius: .6rem;
+}
+
+.resume .btn-outline-primary {
+	color: #35115e;
+	border-color: #35115e;
+}
+
+.resume .btn-outline-primary:hover {
+	color: white;
+	background-color: #35115e;
+}
+
+.resume .col-lg-6 {
+	padding: 0 !important;
 }
 
 .links {
@@ -49,7 +88,8 @@ h1 {
 	font-size: 1.2rem;
 }
 
-.card a:hover {
+.links a:hover,
+.email:hover {
 	color: #35115e;
 }
 
@@ -65,8 +105,30 @@ h1 {
 	align-items: center;
 }
 
+.pdf {
+	height: 100vh;
+	width: 65%;
+	display: none;
+}
+
+.pdf iframe {
+	height: 100%;
+	width: 100%;
+	border-radius: 1rem;
+}
+
+.imgDiv {
+	margin-top: 5rem;
+	text-align: center;
+}
+
+.launch-soon {
+	font-family: sans-serif;
+	font-size: 3rem;
+}
+
 .img {
-	margin-top: 10%;
+	margin-top: 5rem;
 }
 
 /* 404 page styles */
@@ -85,6 +147,7 @@ h1 {
 	color: #f8b5ba;
 }
 
+/* responsive styles */
 @media only screen and (max-width: 500px) {
 	.card {
 		width: 80%;

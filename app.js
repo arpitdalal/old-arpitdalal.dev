@@ -16,6 +16,7 @@ app.use(
 router.get('', (req, res) => res.sendFile(__dirname + '/public/index.html'));
 router.get('/sitemap.xml', (req, res) => res.sendFile(__dirname + '/sitemap.xml'));
 router.get('/public/images/arpit.png', (req, res) => res.sendFile(__dirname + '/public/images/arpit.png'));
+router.get('/public/pdfs/resume.pdf', (req, res) => res.sendFile(__dirname + '/public/pdfs/resume.pdf'));
 router.get('*', (req, res) => res.sendFile(__dirname + '/public/404.html'));
 
 app.use('/', router);
