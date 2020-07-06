@@ -1,3 +1,3 @@
-## arpitdalal.dev
+## ArpitDalal.dev
 
-This is my portfolio site. Visit it on https://arpitdalal.com
+This is my portfolio site. Visit it on https://arpitdalal.dev
