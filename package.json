@@ -19,8 +19,9 @@
 	"homepage": "https://github.com/arpitdalalm/arpitdalal.dev#readme",
 	"dependencies": {
 		"express": "^4.17.1",
-		"express-robots-txt": "^0.4.1",
-		"ngrok": "^3.2.7"
+		"express-robots-txt": "^0.4.1"
 	},
-	"devDependencies": {}
+	"devDependencies": {
+		"ngrok": "^3.2.7"
+	}
 }

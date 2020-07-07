@@ -1,3 +1,5 @@
 .vscode/
 assets/
 node_modules/
+robots.txt
+sitemap.xml
