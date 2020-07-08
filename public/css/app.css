@@ -118,6 +118,7 @@ body {
 }
 
 .toggle-theme-switch:checked {
+    transition: .5s;
     background-color: rgba(0, 0, 0, 0.45);
     box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
@@ -141,7 +142,7 @@ body {
     width: 100%;
     text-align: center;
     background: var(--theme-ui-colors-card-background);
-    border-radius: 1rem;
+    border-radius: .25rem;
     box-shadow: var(--theme-ui-colors-card-shadow);
     align-items: center;
     overflow-y: auto;
@@ -222,7 +223,7 @@ h5 {
 #iframe {
     width: 100%;
     height: 100%;
-    border-radius: 1rem;
+    border-radius: .25rem;
     border: none;
 }
 
