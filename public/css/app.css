@@ -2,7 +2,9 @@
     --theme-ui-colors-highlight: #7f5af0 !important;
     --theme-ui-colors-text: #0d0d0d !important;
     --theme-ui-colors-background: #eff0f3 !important;
-    --theme-ui-colors-card-background: #fffffe !important;
+    --theme-ui-colors-card-background: #eff0f3 !important;
+    --theme-ui-colors-box-shadow-dark: #cbcccf !important;
+    --theme-ui-colors-box-shadow-light: #ffffff !important;
     --theme-ui-colors-highlight-text: #2a2a2a !important;
     --theme-ui-colors-icon: #7f5af0 !important;
     --theme-ui-colors-icon-background: #eff0f3 !important;
@@ -39,7 +41,9 @@ a {
     --theme-ui-colors-highlight: #7f5af0;
     --theme-ui-colors-text: #fffffe;
     --theme-ui-colors-background: #16161a;
-    --theme-ui-colors-card-background: #242629;
+    --theme-ui-colors-card-background: #16161a;
+    --theme-ui-colors-box-shadow-dark: #0c0c0e;
+    --theme-ui-colors-box-shadow-light: #24242b;
     --theme-ui-colors-highlight-text: #c3d2e6;
     --theme-ui-colors-icon: #7f5af0;
     --theme-ui-colors-icon-background: #fffffe;
@@ -67,6 +71,9 @@ a {
 
 .cookie-okay {
     background: var(--theme-ui-colors-card-background);
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
+        -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
+    border-radius: 25px;
     color: currentColor;
     border: none;
     transition: .5s;
@@ -85,12 +92,12 @@ a {
     position: absolute;
     right: 10px;
     top: 10px;
+    z-index: 1;
 }
 
 .toggle-theme-switch {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--theme-ui-colors-card-background);
     border-radius: 0.75em;
-    box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.3) inset;
     color: #fdea7b;
     display: inline-flex;
     align-items: center;
@@ -98,7 +105,9 @@ a {
     padding: 0.15em;
     width: 3em;
     height: 1.5em;
-    transition: background-color 0.1s 0.3s ease-out, box-shadow 0.1s 0.3s ease-out;
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
+        -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
+    transition: .5s;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -136,9 +145,10 @@ a {
 }
 
 .toggle-theme-switch:checked {
+    background-color: var(--theme-ui-colors-card-background);
+    box-shadow: inset 2px 2px 4px var(--theme-ui-colors-box-shadow-dark),
+        inset -2px -2px 4px var(--theme-ui-colors-box-shadow-light);
     transition: .5s;
-    background-color: rgba(0, 0, 0, 0.45);
-    box-shadow: 0.125em 0.125em 0 0.125em rgba(0, 0, 0, 0.1) inset;
 }
 
 .toggle-theme-switch:checked:before {
@@ -159,11 +169,13 @@ a {
     height: 90vh;
     width: 100%;
     text-align: center;
-    background: var(--theme-ui-colors-card-background);
-    border-radius: .25rem;
-    box-shadow: var(--theme-ui-colors-card-shadow);
+    background: var(--theme-ui-colors-background);
+    border-radius: 25px;
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
+        -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
     align-items: center;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .card-img-top {
@@ -201,24 +213,41 @@ a {
     align-items: center;
 }
 
+.social-link:active .svg-bg {
+    transition: .5s;
+    box-shadow: inset 2px 2px 4px var(--theme-ui-colors-box-shadow-dark),
+        inset -2px -2px 4px var(--theme-ui-colors-box-shadow-light);
+}
+
 .svg-bg {
-    background: var(--theme-ui-colors-icon-background);
+    transition: .5s;
+    background: var(--theme-ui-colors-background);
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
+        -3px -3px 6px var(--theme-ui-colors-box-shadow-light);
     padding: .5rem;
     border-radius: 50%;
 }
 
-.nav-link {
+.nav-pills .nav-link {
+    transition: background .5s, box-shadow .5s;
     cursor: pointer;
-    margin: 1%;
+    margin: 10px;
+    border-radius: 25px;
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
+        -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
 }
 
-.nav-link:hover {
-    color: white;
-    background-color: rgba(127, 90, 240, .7);
+.nav-pills .nav-link:hover {
+    transition: box-shadow .5s;
+    box-shadow: 3px 3px 6px var(--theme-ui-colors-box-shadow-dark),
+        -3px -3px 6px var(--theme-ui-colors-box-shadow-light);
 }
 
 .nav-pills .nav-link.active {
-    background-color: var(--theme-ui-colors-highlight);
+    color: var(--theme-ui-colors-highlight);
+    background: var(--theme-ui-colors-background);
+    box-shadow: inset 2px 2px 4px var(--theme-ui-colors-box-shadow-dark),
+        inset -2px -2px 4px var(--theme-ui-colors-box-shadow-light);
 }
 
 .right-div {
