@@ -63,7 +63,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/icon.min.css">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/me.css">
 </head>
 
 <body>
@@ -73,19 +73,58 @@
     <!-- End Google Tag Manager (noscript) -->
 
     <div class="main">
-        <div class="row">
-            <ul>
-                <li>Hello</li>
-            </ul>
-            <div class="card mx-auto">
-                <div id="me">
-                    <h1>Who am I?</h1>
-                </div>
+        <div id="cookie-consent">
+            We use cookies for better user experience. <button class="cookie-okay">Okay</button>
+        </div>
+
+        <nav class="navbar navbar-expand-lg">
+            <a class="navbar-brand" href="/"><img src="./images/logo.png" alt="Arpit Dalal" class="logo" /> Arpit
+                Dalal</a>
+
+            <button class="navbar-toggler collapse-button" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <div class="animated-icon"><span></span><span></span><span></span></div>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav nav-pills" id="v-pills-tab" role="tablist" aria-orientation="horizontal">
+                    <li class="nav-link active" id="me">
+                        <a class="nav-item" href="/me">Who am I?</a>
+                    </li>
+                    <li class="nav-link" id="projects">
+                        <a class="nav-item" href="/projects">My work</a>
+                    </li>
+                    </li>
+                    <li class="nav-link" id="contact">
+                        <a class="nav-item" href="/contact">Get in touch</a>
+                    </li>
+                    <li class="nav-link" id="resume">
+                        <a class="nav-item" href="/resume">Resume</a>
+                    </li>
+                </ul>
+                <label class="toggle-label" title="">
+                    <span id="toggle-title"></span>
+                    <div class="toggle">
+                        <input type="checkbox" class="toggle-state" id="toggleState" />
+                        <div class="indicator"></div>
+                    </div>
+                </label>
+            </div>
+        </nav>
+
+        <div class="card mx-auto">
+            <div id="me">
+                <h1>Who am I?</h1>
             </div>
         </div>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="js/me.js"></script>
     <script src="js/cookies.js"></script>
 </body>
 

@@ -63,9 +63,6 @@
     <!-- Bootstrap css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <!-- Font awesome cdn -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- custom css -->
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -83,9 +80,15 @@
             </div>
             <div class="col-lg-3 left-div">
                 <div class="card mx-auto">
-                    <div class="toggle-theme">
-                        <input class="toggle-theme-switch" type="checkbox">
-                    </div>
+
+                    <label class="toggle-label" title="">
+                        <div class="toggle">
+                            <input type="checkbox" class="toggle-state" id="toggleState" />
+                            <div class="indicator"></div>
+                        </div>
+                    </label>
+
+                    <!-- <div id="toggle-switch" title=""></div> -->
                     <a href="/"><img src="images/logo.png" class="anim card-img-top" alt="Arpit Dalal"></a>
                     <div class="card-body">
                         <h1 class="anim card-title">Arpit Dalal</h1>

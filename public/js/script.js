@@ -6,12 +6,13 @@ if (gsap) {
   tl
     .from('.left-div', { x: -50, opacity: 0 })
     .from('.right-div', { x: 50, opacity: 0 }, '-=0.5')
-    .from('.toggle-theme', { scale: 0, opacity: 0 })
+    .from('#toggle-switch', { scale: 0, opacity: 0 })
     .from('.anim', { y: -20, opacity: 0, stagger: 0.2 });
 }
 
 $(document).ready(function() {
   $load.load('/me #me');
+
   $($navLinks).on('click', function() {
     $('.nav-link.active').removeClass('active');
     $(this).addClass('active');

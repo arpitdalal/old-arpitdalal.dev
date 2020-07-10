@@ -1,20 +1,26 @@
-const $toggleThemeSwitch = $('.toggle-theme-switch');
+const $toggleThemeSwitch = $('#toggleState');
+const $toggleThemeLabel = $('.toggle-label');
+const $toggleTitle = $('#toggle-title');
 const $cookieConsent = $('#cookie-consent');
 const $cookieOkayBtn = $('.cookie-okay');
 
 $cookieOkayBtn.on('click', () => {
-  $cookieConsent.hide();
+  $cookieConsent.css('display', 'none');
   document.cookie = 'consent=yes';
 });
 
 $toggleThemeSwitch.click(() => {
   $('.main').toggleClass('light-mode');
   if ($('.main').hasClass('light-mode')) {
+    $toggleThemeSwitch.prop('checked', true);
+    $toggleThemeLabel.attr('title', 'Toggle to dark mode');
+    $toggleTitle.text('Toggle to dark mode');
     document.cookie = `theme=light`;
-    $load.attr('src', $load.attr('src'));
   } else {
+    $toggleThemeSwitch.prop('checked', false);
+    $toggleThemeLabel.attr('title', 'Toggle to light mode');
+    $toggleTitle.text('Toggle to light mode');
     document.cookie = `theme=dark`;
-    $load.attr('src', $load.attr('src'));
   }
 });
 
@@ -25,8 +31,12 @@ let getCookieValue = (name) => {
 };
 
 $(document).ready(function() {
+  $('.collapse-button').on('click', () => {
+    $('.animated-icon').toggleClass('open');
+  });
+
   if (!getCookieValue('consent')) {
-    $cookieConsent.css('visibility', 'visible');
+    $cookieConsent.css('display', 'block');
   }
 
   if (getCookieValue('theme')) {
@@ -34,13 +44,23 @@ $(document).ready(function() {
     if (themeValue != 'dark') {
       $('.main').addClass('light-mode');
       $toggleThemeSwitch.prop('checked', true);
+      $toggleThemeLabel.attr('title', 'Toggle to dark mode');
+      $toggleTitle.text('Toggle to dark mode');
     } else {
       $toggleThemeSwitch.prop('checked', false);
+      $toggleThemeLabel.attr('title', 'Toggle to light mode');
+      $toggleTitle.text('Toggle to light mode');
     }
   } else {
     if ($('.main').hasClass('light-mode')) {
+      $toggleThemeSwitch.prop('checked', true);
+      $toggleThemeLabel.attr('title', 'Toggle to dark mode');
+      $toggleTitle.text('Toggle to dark mode');
       document.cookie = `theme=light`;
     } else {
+      $toggleThemeSwitch.prop('checked', false);
+      $toggleThemeLabel.attr('title', 'Toggle to light mode');
+      $toggleTitle.text('Toggle to light mode');
       document.cookie = `theme=dark`;
     }
   }
