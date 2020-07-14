@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const robots = require('express-robots-txt');
-const ngrok = require('ngrok');
 const router = express.Router();
 const port = process.env.PORT || 3000;
 
@@ -27,7 +26,4 @@ router.get('*', (req, res) => res.sendFile(__dirname + '/public/404.html'));
 app.use('/', router);
 app.listen(port, () => {
   console.log(`local: http://localhost:${port}`);
-  (async () => {
-    console.log(`public: ${await ngrok.connect(port)}`);
-  })();
 });

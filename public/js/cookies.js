@@ -1,8 +1,22 @@
+const $main = $('.main');
 const $toggleThemeSwitch = $('#toggleState');
 const $toggleThemeLabel = $('.toggle-label');
 const $toggleTitle = $('#toggle-title');
 const $cookieConsent = $('#cookie-consent');
 const $cookieOkayBtn = $('.cookie-okay');
+
+const getCookieValue = (name) => {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(';').shift();
+};
+
+const setTheme = (mode) => {
+  $toggleThemeSwitch.prop('checked', mode == 'dark' ? false : true);
+  $toggleThemeLabel.attr('title', `Toggle to ${mode} mode`);
+  $toggleTitle.text(`Toggle to ${mode} mode`);
+  document.cookie = `theme=${mode}`;
+};
 
 $cookieOkayBtn.on('click', () => {
   $cookieConsent.css('display', 'none');
@@ -10,25 +24,13 @@ $cookieOkayBtn.on('click', () => {
 });
 
 $toggleThemeSwitch.click(() => {
-  $('.main').toggleClass('light-mode');
-  if ($('.main').hasClass('light-mode')) {
-    $toggleThemeSwitch.prop('checked', true);
-    $toggleThemeLabel.attr('title', 'Toggle to dark mode');
-    $toggleTitle.text('Toggle to dark mode');
-    document.cookie = `theme=light`;
+  $main.toggleClass('light-mode');
+  if ($main.hasClass('light-mode')) {
+    setTheme('light');
   } else {
-    $toggleThemeSwitch.prop('checked', false);
-    $toggleThemeLabel.attr('title', 'Toggle to light mode');
-    $toggleTitle.text('Toggle to light mode');
-    document.cookie = `theme=dark`;
+    setTheme('dark');
   }
 });
-
-let getCookieValue = (name) => {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-};
 
 $(document).ready(function() {
   $('.collapse-button').on('click', () => {
@@ -41,27 +43,21 @@ $(document).ready(function() {
 
   if (getCookieValue('theme')) {
     let themeValue = getCookieValue('theme');
+
     if (themeValue != 'dark') {
-      $('.main').addClass('light-mode');
-      $toggleThemeSwitch.prop('checked', true);
-      $toggleThemeLabel.attr('title', 'Toggle to dark mode');
-      $toggleTitle.text('Toggle to dark mode');
+      $main.addClass('light-mode');
+      setTheme('light');
     } else {
-      $toggleThemeSwitch.prop('checked', false);
-      $toggleThemeLabel.attr('title', 'Toggle to light mode');
-      $toggleTitle.text('Toggle to light mode');
+      $main.removeClass('light-mode');
+      setTheme('dark');
     }
   } else {
-    if ($('.main').hasClass('light-mode')) {
-      $toggleThemeSwitch.prop('checked', true);
-      $toggleThemeLabel.attr('title', 'Toggle to dark mode');
-      $toggleTitle.text('Toggle to dark mode');
-      document.cookie = `theme=light`;
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      $main.removeClass('light-mode');
+      setTheme('dark');
     } else {
-      $toggleThemeSwitch.prop('checked', false);
-      $toggleThemeLabel.attr('title', 'Toggle to light mode');
-      $toggleTitle.text('Toggle to light mode');
-      document.cookie = `theme=dark`;
+      $main.addClass('light-mode');
+      setTheme('light');
     }
   }
 });

@@ -11,7 +11,7 @@ if (gsap) {
 }
 
 $(document).ready(function() {
-  $load.load('/me #me');
+  $load.load('/me #meDiv');
 
   $($navLinks).on('click', function() {
     $('.nav-link.active').removeClass('active');
@@ -21,6 +21,6 @@ $(document).ready(function() {
       $load.empty();
       return $load.append('<iframe width="100%" height="100%" style="border: none;" src="/resume"></iframe>');
     }
-    return $load.load(`/${$(this).attr('id')} #${$(this).attr('id')}`);
+    return $load.load(`/${$(this).attr('id')} #${$(this).attr('id')}Div`);
   });
 });
