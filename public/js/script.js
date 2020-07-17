@@ -2,12 +2,12 @@ const $navLinks = $('.nav-link');
 const $load = $('#load');
 
 if (gsap) {
-  let tl = gsap.timeline({ duration: 0.5 });
+  let tl = gsap.timeline({ duration: 0.2 });
   tl
     .from('.left-div', { x: -50, opacity: 0 })
     .from('.right-div', { x: 50, opacity: 0 }, '-=0.5')
-    .from('#toggle-switch', { scale: 0, opacity: 0 })
-    .from('.anim', { y: -20, opacity: 0, stagger: 0.2 });
+    .from('.toggle-label', { scale: 0, opacity: 0 })
+    .from('.anim', { y: -20, opacity: 0, stagger: 0.1 });
 }
 
 $(document).ready(function() {

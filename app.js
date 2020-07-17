@@ -1,8 +1,13 @@
+const exec = require('child_process').exec;
 const express = require('express');
 const app = express();
 const robots = require('express-robots-txt');
+
 const router = express.Router();
 const port = process.env.PORT || 3000;
+const myShellScript = exec(
+  'powershell -ExecutionPolicy ByPass lt -h "https://serverless.social/" --subdomain arpit -p 3000'
+);
 
 app.use(express.static(__dirname + '/public'));
 app.use(
@@ -25,5 +30,12 @@ router.get('*', (req, res) => res.sendFile(__dirname + '/public/404.html'));
 
 app.use('/', router);
 app.listen(port, () => {
+  myShellScript.stdout.on('data', (data) => {
+    console.log(data);
+  });
+  myShellScript.stderr.on('data', (data) => {
+    console.error(data);
+  });
+
   console.log(`local: http://localhost:${port}`);
 });

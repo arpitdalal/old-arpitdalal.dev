@@ -104,6 +104,7 @@ a {
 }
 
 .navbar-expand-lg .navbar-collapse {
+    text-align: center;
     justify-content: flex-end;
 }
 

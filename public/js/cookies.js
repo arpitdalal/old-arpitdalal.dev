@@ -13,8 +13,8 @@ const getCookieValue = (name) => {
 
 const setTheme = (mode) => {
   $toggleThemeSwitch.prop('checked', mode == 'dark' ? false : true);
-  $toggleThemeLabel.attr('title', `Toggle to ${mode} mode`);
-  $toggleTitle.text(`Toggle to ${mode} mode`);
+  $toggleThemeLabel.attr('title', `Toggle to ${mode == 'dark' ? 'light' : 'dark'} mode`);
+  $toggleTitle.text(`Toggle to ${mode == 'dark' ? 'light' : 'dark'} mode`);
   document.cookie = `theme=${mode}`;
 };
 

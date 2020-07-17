@@ -196,7 +196,7 @@ a {
     transition: .5s;
     background: var(--theme-ui-colors-background);
     box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
-        -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
+        -4px -4px 12px var(--theme-ui-colors-box-shadow-light);
     padding: .5rem;
     border-radius: 50%;
 }
