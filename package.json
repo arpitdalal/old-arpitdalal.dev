@@ -20,5 +20,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-robots-txt": "^0.4.1"
+  },
+  "devDependencies": {
+    "localtunnel": "^2.0.0"
   }
 }
