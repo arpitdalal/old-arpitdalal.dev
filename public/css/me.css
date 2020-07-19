@@ -51,15 +51,18 @@ a {
     background: var(--theme-ui-colors-background);
     color: var(--theme-ui-colors-text);
     transition: .5s;
-    padding: 0 20px 20px 20px;
+    padding: 20px;
+    padding-top: 90px;
 }
 
 /*Cookie Consent Begin*/
 
 #cookie-consent {
+    transition: .5s;
     font-size: 1rem;
     color: currentColor;
     display: none;
+    margin-bottom: 5px;
 }
 
 .cookie-okay {
@@ -89,6 +92,12 @@ a {
 }
 
 /* start-Navbar */
+
+.navbar {
+    transition: .5s;
+    background: var(--theme-ui-colors-background);
+    box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark);
+}
 
 .navbar-brand {
     transition: .5s;
