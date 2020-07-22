@@ -1,17 +1,22 @@
 const $navLinks = $('.nav-link');
+const $navLinksMb = $('.nav-link-mb');
 const $load = $('#load');
 
 if (gsap) {
-  let tl = gsap.timeline({ duration: 0.2 });
+  let tl = gsap.timeline({ duration: 0.05 });
   tl
-    .from('.left-div', { x: -50, opacity: 0 })
-    .from('.right-div', { x: 50, opacity: 0 }, '-=0.5')
+    .from('.left-div', { x: -20, opacity: 0, duration: 0.2 })
+    .from('.right-div', { x: 20, opacity: 0, duration: 0.2 }, '-=0.2')
     .from('.toggle-label', { scale: 0, opacity: 0 })
-    .from('.anim', { y: -20, opacity: 0, stagger: 0.1 });
+    .from('.anim', { y: -20, opacity: 0, stagger: 0.05 });
 }
 
 $(document).ready(function() {
   $load.load('/me #meDiv');
+
+  $($navLinksMb).on('click', function() {
+    window.location.href = `/${$(this).attr('id')}`;
+  });
 
   $($navLinks).on('click', function() {
     $('.nav-link.active').removeClass('active');

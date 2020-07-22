@@ -8,7 +8,6 @@
     --theme-ui-colors-highlight-text: #2a2a2a !important;
     --theme-ui-colors-icon: #7f5af0 !important;
     --theme-ui-colors-icon-background: #eff0f3 !important;
-    --theme-ui-colors-card-shadow: 0 4px 8px 0 rgb(179, 179, 179), 0 6px 20px 0 rgb(179, 179, 179) !important;
 }
 
 body {
@@ -37,6 +36,11 @@ a {
     text-decoration: none;
 }
 
+.mobile {
+    padding: 20px;
+    padding-top: 90px;
+}
+
 .main {
     --theme-ui-colors-highlight: #7f5af0;
     --theme-ui-colors-text: #fffffe;
@@ -47,7 +51,6 @@ a {
     --theme-ui-colors-highlight-text: #c3d2e6;
     --theme-ui-colors-icon: #7f5af0;
     --theme-ui-colors-icon-background: #fffffe;
-    --theme-ui-colors-card-shadow: 0 4px 8px 0 rgba(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0);
     background: var(--theme-ui-colors-background);
     color: var(--theme-ui-colors-text);
     transition: .5s;
@@ -59,14 +62,15 @@ a {
 
 /*Cookie Consent Begin*/
 
-#cookie-consent {
+.cookie-dk {
     font-size: 1rem;
     display: none;
     position: absolute;
     top: 6px;
     left: 20px;
     z-index: 2;
-    color: currentColor;
+    color: var(--theme-ui-colors-text);
+    transition: .5s;
 }
 
 .cookie-okay {
@@ -74,7 +78,7 @@ a {
     box-shadow: 3px 3px 6px var(--theme-ui-colors-box-shadow-dark),
         -3px -3px 6px var(--theme-ui-colors-box-shadow-light);
     border-radius: 25px;
-    color: currentColor;
+    color: var(--theme-ui-colors-text);
     border: none;
     transition: .5s;
 }
@@ -88,7 +92,7 @@ a {
 
 /* start-toggle theme */
 
-.toggle-label {
+.toggle-label-dk {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -96,7 +100,7 @@ a {
     color: #394a56;
 }
 
-.toggle {
+.toggle-label-dk .toggle {
     isolation: isolate;
     position: relative;
     height: 20px;
@@ -111,11 +115,11 @@ a {
         -3px -3px 3px var(--theme-ui-colors-box-shadow-light);
 }
 
-.toggle-state {
+.toggle-label-dk .toggle-state {
     display: none;
 }
 
-.indicator {
+.toggle-label-dk .indicator {
     height: 100%;
     width: 200%;
     background: var(--theme-ui-colors-text);
@@ -126,11 +130,17 @@ a {
         -6px -6px 12px var(--theme-ui-colors-box-shadow-light);
 }
 
-.toggle-state:checked~.indicator {
+.toggle-label-dk .toggle-state:checked~.indicator {
     transform: translate3d(25%, 0, 0);
 }
 
 /* end-toggle theme */
+
+.mobile .card {
+    margin: 0;
+    height: 100vh;
+    width: 90%;
+}
 
 .card {
     transition: .5s;
@@ -155,6 +165,15 @@ a {
     padding: 0 1.25rem;
 }
 
+.head {
+    transition: .5s;
+}
+
+.head:hover {
+    color: var(--theme-ui-colors-text);
+    text-decoration: none;
+}
+
 .card-title {
     margin-bottom: 0;
 }
@@ -162,6 +181,11 @@ a {
 .card-sub-title {
     margin-bottom: .75rem;
     color: var(--theme-ui-colors-highlight);
+}
+
+.card-text .link {
+    transition: .5s;
+    color: var(--theme-ui-colors-highlight)
 }
 
 .social-links {

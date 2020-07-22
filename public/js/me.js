@@ -1,4 +1,4 @@
-const $navLinks = $('.nav-link');
+const $navLinks = $('.nav-link-mb');
 
 $(document).ready(function() {
   $($navLinks).on('click', function() {

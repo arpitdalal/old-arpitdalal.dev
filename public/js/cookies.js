@@ -1,8 +1,8 @@
 const $main = $('.main');
-const $toggleThemeSwitch = $('#toggleState');
+const $toggleThemeSwitch = $('.toggleState');
 const $toggleThemeLabel = $('.toggle-label');
 const $toggleTitle = $('#toggle-title');
-const $cookieConsent = $('#cookie-consent');
+const $cookieConsent = $('.cookie-consent');
 const $cookieOkayBtn = $('.cookie-okay');
 
 const getCookieValue = (name) => {
