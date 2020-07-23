@@ -15,7 +15,7 @@ const setTheme = (mode) => {
   $toggleThemeSwitch.prop('checked', mode == 'dark' ? false : true);
   $toggleThemeLabel.attr('title', `Toggle to ${mode == 'dark' ? 'light' : 'dark'} mode`);
   $toggleTitle.text(`Toggle to ${mode == 'dark' ? 'light' : 'dark'} mode`);
-  document.cookie = `theme=${mode}`;
+  document.cookie = `theme=${mode}; expires=Wed, 14 Jun 3017 07:00:00 GMT`;
 };
 
 $cookieOkayBtn.on('click', () => {

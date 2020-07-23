@@ -1,5 +1,4 @@
 const $navLinks = $('.nav-link');
-const $navLinksMb = $('.nav-link-mb');
 const $load = $('#load');
 
 if (gsap) {
@@ -13,10 +12,6 @@ if (gsap) {
 
 $(document).ready(function() {
   $load.load('/me #meDiv');
-
-  $($navLinksMb).on('click', function() {
-    window.location.href = `/${$(this).attr('id')}`;
-  });
 
   $($navLinks).on('click', function() {
     $('.nav-link.active').removeClass('active');
