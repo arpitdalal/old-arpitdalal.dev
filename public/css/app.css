@@ -134,6 +134,23 @@ a {
     transform: translate3d(25%, 0, 0);
 }
 
+.toggle-label-dk .indicator2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200%;
+    background: var(--theme-ui-colors-background);
+    border-radius: 15px;
+    transform: translate3d(7%, -20%, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    z-index: 1
+}
+
+.toggle-label-dk .toggle-state:checked~.indicator2 {
+    opacity: 0;
+}
+
 /* end-toggle theme */
 
 .mobile .card {
@@ -143,11 +160,12 @@ a {
 }
 
 .card {
+    border: none;
+    text-align: center;
     transition: .5s;
     margin: 5vh 0;
     height: 90vh;
     width: 100%;
-    text-align: center;
     background: var(--theme-ui-colors-background);
     border-radius: 25px;
     box-shadow: 6px 6px 12px var(--theme-ui-colors-box-shadow-dark),
@@ -157,7 +175,7 @@ a {
     overflow-x: hidden;
 }
 
-.card-img-top {
+#logo-img {
     width: 220px;
 }
 

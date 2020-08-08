@@ -39,26 +39,6 @@
     animation: fadeOut 2s;
 }
 
-@keyframes fadeIn {
-    0% {
-        top: -100%;
-    }
-
-    100% {
-        top: 0;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        top: 0;
-    }
-
-    100% {
-        top: -100%;
-    }
-}
-
 .navbar-brand {
     transition: .5s;
     color: var(--theme-ui-colors-text);
@@ -205,6 +185,7 @@
 /* start CTA buttons */
 
 .cta {
+    cursor: pointer;
     padding: 10px 0;
     border-radius: 25px;
     background: var(--theme-ui-colors-background);
@@ -221,7 +202,6 @@
 
 .cta a {
     transition: color .5s;
-    display: block;
 }
 
 .cta.cta-primary a {
@@ -281,3 +261,27 @@
 }
 
 /* end toggle */
+
+/* start animations */
+
+@keyframes fadeIn {
+    0% {
+        top: -100%;
+    }
+
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -100%;
+    }
+}
+
+/* end animations */

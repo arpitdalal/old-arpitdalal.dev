@@ -5,7 +5,7 @@ const robots = require('express-robots-txt');
 
 const router = express.Router();
 const port = process.env.PORT || 3000;
-const myShellScript = exec(
+const createPublicUrl = exec(
   'powershell -ExecutionPolicy ByPass lt -h "https://serverless.social/" --subdomain arpit -p 3000'
 );
 
@@ -30,10 +30,10 @@ router.get('*', (req, res) => res.sendFile(__dirname + '/public/404.html'));
 
 app.use('/', router);
 app.listen(port, () => {
-  myShellScript.stdout.on('data', (data) => {
+  createPublicUrl.stdout.on('data', (data) => {
     console.log(data);
   });
-  myShellScript.stderr.on('data', (data) => {
+  createPublicUrl.stderr.on('data', (data) => {
     console.error(data);
   });
 
